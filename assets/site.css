@@ -849,3 +849,41 @@ body.theme-dark .faq-item strong { color: var(--gold-lite); }
   max-width: 18ch; margin: 0 auto; text-shadow: 0 2px 36px rgba(0,0,0,.4); }
 .page-hero.dark h1 .hl { color: var(--gold-lite); }
 .page-hero.dark .lede { color: var(--paper-dim); margin: 22px auto 0; max-width: 56ch; }
+
+/* ============================================================
+   OUR OWN PRODUCT · Prodavaj.mk
+   The logo keeps Prodavaj's own colours and face (Fira Sans
+   Condensed, loaded per page with a text= subset), so it sits
+   on a light surface in both themes.
+   ============================================================ */
+.product-logo { display: inline-flex; align-items: center; gap: .3em; }
+.product-logo svg { width: 1.15em; height: 1.15em; flex: none; }
+.product-word { font-family: 'Fira Sans Condensed', var(--sans); font-weight: 800;
+  letter-spacing: -.01em; line-height: 1; color: #14181d; }
+.product-word span { font-weight: 700; color: #5f6763; }
+
+/* Work page: logo panel beside the write-up. */
+.product-section { background: var(--paper-2); border-block: 1px solid var(--line); }
+.product-panel { min-height: 320px; display: grid; place-items: center; align-content: center; gap: 22px;
+  background: #f2f3f0; border: 1px solid var(--line); border-radius: 4px; padding: 40px 24px; }
+.product-panel .product-logo { font-size: clamp(2.4rem, 5vw, 3.4rem); }
+.product-status { margin: 0; display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--mono); font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: #0a6646; }
+.product-status i { width: 8px; height: 8px; border-radius: 50%; background: #1a7f58;
+  box-shadow: 0 0 0 4px rgba(26,127,88,.16); }
+@media (max-width: 820px) { .product-panel { min-height: 220px; order: 2; } }
+
+/* Home: a compact strip. */
+.product-strip { padding-block: clamp(34px, 5vw, 56px); background: var(--paper-2);
+  border-block: 1px solid var(--line); }
+.product-strip-inner { display: flex; align-items: center; gap: clamp(20px, 3.5vw, 44px); }
+.product-strip-copy { flex: 1; min-width: 0; }
+.product-strip-copy p { margin: 10px 0 0; color: var(--ink-soft); font-size: 1.02rem; line-height: 1.55; }
+.product-logo--chip { flex: none; font-size: 1.7rem; background: #f2f3f0; border-radius: 999px;
+  padding: .45em .8em .45em .6em; }
+body.theme-dark .product-strip { background: var(--d-raised); border-color: var(--d-line); }
+body.theme-dark .product-strip-copy p { color: var(--paper-dim); }
+body.theme-dark .product-strip-copy strong { color: var(--paper); }
+@media (max-width: 760px) {
+  .product-strip-inner { flex-direction: column; align-items: flex-start; }
+}
