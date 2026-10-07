@@ -1,0 +1,24 @@
+{
+	admin off
+	auto_https off
+}
+
+:8080 {
+	root * /srv
+	encode zstd gzip
+
+	# Redirect /index.html and /foo/index.html to their directory
+	@index path_regexp index ^(.*/)index\.html$
+	redir @index {re.index.1} 308
+
+	# Redirect /page.html -> /page
+	@html path_regexp html ^(.+)\.html$
+	redir @html {re.html.1} 308
+
+	# Serve /page from page.html (or page/index.html)
+	try_files {path} {path}.html {path}/index.html
+
+	file_server {
+		hide .git Caddyfile Dockerfile
+	}
+}
